@@ -15,6 +15,7 @@ services:
           - DB_HOST=postgres-db
           - DB_USER=postgres
           - DB_PASSWORD=postgres
+	  - DJANGO_SUPERUSER_PASSWORD=admin
         depends_on:
             - postgres-db
 
@@ -38,7 +39,6 @@ services:
            - ./sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
          ports:
            - 5432:5432
-
          environment:
            - POSTGRES_DB=weather
            - POSTGRES_USER=postgres
