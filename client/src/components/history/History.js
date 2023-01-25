@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import HistoryItem from "./HistoryItem";
+import HistoryItem from "../historyitem/HistoryItem";
 
 
 const History = ({historyData}) => {

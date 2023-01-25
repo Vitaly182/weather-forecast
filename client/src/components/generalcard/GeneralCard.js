@@ -1,6 +1,6 @@
-import DetailCard from "./DetailCard";
-import Charts from "./Charts";
-import Cards from "./Cards";
+import DetailCard from "../detailcard/DetailCard";
+import Charts from "../charts/Charts";
+import Cards from "../cards/Cards";
 
 
 const GeneralCard = ({weatherData, weatherIcon, city, showCard}) => {

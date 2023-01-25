@@ -1,4 +1,4 @@
-import MySelect from './select/MySelect';
+import MySelect from '../myselect/MySelect';
 
 const Filter = ({filter, setFilter}) => {
     return (

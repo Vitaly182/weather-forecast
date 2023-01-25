@@ -1,6 +1,6 @@
 import ReactECharts from 'echarts-for-react';
 import moment from "moment";
-import Filter from './Filter';
+import Filter from '../filter/Filter';
 import { useState, useEffect } from "react";
 
 const Charts = ({weatherData, re}) => {

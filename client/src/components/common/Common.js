@@ -1,5 +1,5 @@
-import History from "./History";
-import GeneralCard from "./GeneralCard";
+import History from "../history/History";
+import GeneralCard from "../generalcard/GeneralCard";
 import { useEffect, useState } from "react";
 import html2canvas from "html2canvas";
 
