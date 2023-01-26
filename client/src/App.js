@@ -36,7 +36,6 @@ function App() {
     try {
       const headers = { 'Content-Type': 'application/json' }
       const res = await fetch(
-        // `${URL_FORECAST}`, {
         `${URL_FORECAST}`, {
           method : "POST",
           mode: 'cors',
