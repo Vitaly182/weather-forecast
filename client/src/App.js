@@ -4,9 +4,11 @@ import Common from "./components/common/Common";
 
 
 function App() {
+
   const API_KEY = process.env.REACT_APP_API_KEY;
   const URL = process.env.REACT_APP_URL;
   const ICON_URL = process.env.REACT_APP_ICON_URL;
+  const URL_FORECAST = process.env.REACT_APP_URL_FORECAST;
 
   const [noData, setNoData] = useState("No Data Yet");
   const [searchTerm, setSearchTerm] = useState("");
@@ -32,10 +34,20 @@ function App() {
         ? `q=${location}`
         : `lat=${location[0]}&lon=${location[1]}`;
     try {
-      let res = await fetch(
-        `${URL + how_to_search}&appid=${API_KEY}&units=metric`
+      const headers = { 'Content-Type': 'application/json' }
+      const res = await fetch(
+        // `${URL_FORECAST}`, {
+        `${URL_FORECAST}`, {
+          method : "POST",
+          mode: 'cors',
+          headers: headers,
+          body: JSON.stringify({
+            param: `${URL + how_to_search}&appid=${API_KEY}&units=metric`,
+          })
+        }
       );
       let data = await res.json();
+      data = data[0];
       if (data.cod !== "200") {
         setNoData("Location Not Found");
         return;
